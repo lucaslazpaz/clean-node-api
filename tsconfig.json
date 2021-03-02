@@ -1,0 +1,9 @@
+{
+    "compilerOptions": {
+        "outDir": "./dist",         //diretório em que será compilado o código js
+        "module": "commonjs",       //importação e exportação de módulos
+        "target": "es2019",         //versão de compilação do ecma script
+        "esModuleInterop": true,    //converte commonjs 
+        "allowJs": true             //permite arquivos js além de ts
+    }
+}
