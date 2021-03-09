@@ -1,4 +1,3 @@
-import { AddAccountRepository } from '../../../../data/protocols/add-account-repository'
 import { MongoHelper } from '../helpers/mongo-helper'
 import { AccountMongoRepository } from './account'
 
@@ -9,6 +8,11 @@ describe('Account Mongo Repository', () => {
 
   afterAll(async () => {
     await MongoHelper.disconnect()
+  })
+
+  beforeEach(async () => {
+    const accountCollection = MongoHelper.getCollection('accounts')
+    await accountCollection.deleteMany({})
   })
 
   const makeSut = (): AccountMongoRepository => {
